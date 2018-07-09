@@ -1,0 +1,99 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="main_dp0">0dp</dimen>
+    <dimen name="main_dp1">0.33dp</dimen>
+    <dimen name="main_dp_half_1">0.5dp</dimen>
+    <dimen name="main_dp1dp">1dp</dimen>
+    <dimen name="main_dp2">2dp</dimen>
+    <dimen name="main_dp3">3dp</dimen>
+    <dimen name="main_dp4">4dp</dimen>
+    <dimen name="main_dp5">5dp</dimen>
+    <dimen name="main_dp7">7dp</dimen>
+    <dimen name="main_dp8">8dp</dimen>
+    <dimen name="main_dp9">9dp</dimen>
+    <dimen name="main_dp10">10dp</dimen>
+    <dimen name="main_dp11">11dp</dimen>
+    <dimen name="main_dp12">12dp</dimen>
+    <dimen name="main_dp13">13dp</dimen>
+    <dimen name="main_dp14">14dp</dimen>
+    <dimen name="main_dp15">15dp</dimen>
+    <dimen name="main_dp16">16dp</dimen>
+    <dimen name="main_dp18">18dp</dimen>
+    <dimen name="main_dp19">19dp</dimen>
+    <dimen name="main_dp20">20dp</dimen>
+    <dimen name="main_dp21">21dp</dimen>
+    <dimen name="main_dp23">23dp</dimen>
+    <dimen name="main_dp24">24dp</dimen>
+    <dimen name="main_dp25">25dp</dimen>
+    <dimen name="main_dp28">28dp</dimen>
+    <dimen name="main_dp32">32dp</dimen>
+    <dimen name="main_dp30">30dp</dimen>
+    <dimen name="main_dp31">31dp</dimen>
+    <dimen name="main_dp33">33dp</dimen>
+    <dimen name="main_dp36">36dp</dimen>
+    <dimen name="main_dp37">37dp</dimen>
+    <dimen name="main_dp40">40dp</dimen>
+    <dimen name="main_dp42">42dp</dimen>
+    <dimen name="main_dp43">43dp</dimen>
+    <dimen name="main_dp44">44dp</dimen>
+    <dimen name="main_dp45">45dp</dimen>
+    <dimen name="main_dp48">48dp</dimen>
+    <dimen name="main_dp49">49dp</dimen>
+    <dimen name="main_dp50">50dp</dimen>
+    <dimen name="main_dp55">55dp</dimen>
+    <dimen name="main_dp60">60dp</dimen>
+    <dimen name="main_dp63">63dp</dimen>
+    <dimen name="main_dp70">70dp</dimen>
+    <dimen name="main_dp75">75dp</dimen>
+    <dimen name="main_dp80">80dp</dimen>
+    <dimen name="main_dp86">86dp</dimen>
+    <dimen name="main_dp99">99dp</dimen>
+    <dimen name="main_dp100">100dp</dimen>
+    <dimen name="main_dp110">110dp</dimen>
+    <dimen name="main_dp120">120dp</dimen>
+    <dimen name="main_dp156">156dp</dimen>
+    <dimen name="main_dp200">200dp</dimen>
+    <dimen name="main_dp300">300dp</dimen>
+    <dimen name="main_dp150">150dp</dimen>
+
+    <dimen name="main_sp8">8sp</dimen>
+    <dimen name="main_sp9">9sp</dimen>
+    <dimen name="main_sp10">10sp</dimen>
+    <dimen name="main_sp11">11sp</dimen>
+    <dimen name="main_sp12">12sp</dimen>
+    <dimen name="main_sp13">13sp</dimen>
+    <dimen name="main_sp14">14sp</dimen>
+    <dimen name="main_sp15">15sp</dimen>
+    <dimen name="main_sp16">16sp</dimen>
+    <dimen name="main_sp18">18sp</dimen>
+    <dimen name="main_sp20">20sp</dimen>
+
+    <!--标题文字大小-->
+    <dimen name="textSize_alert_title1">16sp</dimen>
+    <dimen name="textSize_actionsheet_title">14sp</dimen>
+    <!--标题文字高度-->
+    <dimen name="height_alert_title">48dp</dimen>
+    <dimen name="height_actionsheet_title">40dp</dimen>
+    <!--消息文字大小-->
+    <dimen name="textSize_alert_msg">15sp</dimen>
+    <dimen name="textSize_actionsheet_msg">14sp</dimen>
+    <!--消息距离底部间距-->
+    <dimen name="marginBottom_actionsheet_msg">14dp</dimen>
+    <!--窗口模式左右两边到屏幕的间距-->
+    <dimen name="margin_alert_left_right">40dp</dimen>
+    <dimen name="margin_actionsheet_left_right">10dp</dimen>
+    <!--线条粗细-->
+    <dimen name="size_divier">1dp</dimen>
+    <!--按钮的高度-->
+    <dimen name="height_alert_button">48dp</dimen>
+    <dimen name="height_alert_button1">44dp</dimen>
+    <!--按钮文字大小-->
+    <dimen name="textSize_alert_button">16sp</dimen>
+    <!--圆角-->
+    <dimen name="radius_alertmain">15px</dimen>
+
+
+</resources>

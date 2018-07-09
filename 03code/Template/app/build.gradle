@@ -1,0 +1,178 @@
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+def apkName = "meetingresent"
+
+def buildTime() {
+    def df = new SimpleDateFormat("MMddHHmm")
+    df.setTimeZone(TimeZone.getDefault())
+    return df.format(new Date())
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.comcsoft.meeting.preset"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+        //64K 问题
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+//            storeFile file('D:\\91360\\home-android\\03Code\\HomePathology\\app\\comcsoft91360.jks')
+            storeFile file('template.jks')
+            storePassword 'template'
+            keyAlias 'template'
+            keyPassword 'template'
+            v2SigningEnabled false
+        }
+        release {
+//            storeFile file('D:\\91360\\home-android\\03Code\\HomePathology\\app\\comcsoft91360.jks')
+            storeFile file('template.jks')
+            storePassword 'template'
+            keyAlias 'template'
+            keyPassword 'template'
+            v2SigningEnabled false
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+//            signingConfig signingConfig.comcsoft91360
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            shrinkResources false//去掉不用资源
+//            signingConfig signingConfig.comcsoft91360
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        //应用编译完成，自定义apk输出位置及文件名
+        android.applicationVariants.all {
+            variant ->
+                variant.outputs.all {
+                    output ->
+                        output.outputFileName = "../../apk/" + apkName + "_" + rootProject.ext.versionCode + "_" + rootProject.ext.versionName + "_" + buildTime() + "_debug.apk";
+                }
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res',
+                            'src/main/res/main',
+                            'src/main/res/user',
+                            'src/main/res/common',
+                    ]
+        }
+    }
+
+
+    splits {
+        abi {
+            enable true
+            reset()
+//            include 'armeabi'  //只打 armeabi
+        }
+    }
+
+    dependencies {
+//        implementation project(':android-pickers')
+//        implementation project(':picturepicker')
+//        implementation project(':refresh-layout')
+//        implementation project(':calendar')
+
+        //黄油刀
+        implementation "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+        annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+        //rxbinding
+        implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.rxbindingVersion"
+        implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:$rootProject.rxbindingVersion"
+        implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rootProject.rxbindingVersion"
+        implementation "com.jakewharton.rxbinding2:rxbinding-design:$rootProject.rxbindingVersion"
+        implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rootProject.rxbindingVersion"
+        //Gson解析依赖
+        implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+        //Glide加载图片
+        implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+        //retrofit
+        implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+        implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+        implementation "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"
+        implementation "com.squareup.retrofit2:converter-scalars:$rootProject.retrofitVersion"
+        //okhttp
+        implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
+        implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
+        //rxjava
+        implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+        implementation 'io.reactivex.rxjava2:rxjava:2.1.8'
+        implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+        implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+        //事件总线
+        implementation 'org.greenrobot:eventbus:3.0.0'
+
+        //进度加载
+        implementation 'com.kaopiz:kprogresshud:1.0.5'
+        //BRVAH
+        implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
+
+        //easypermissions
+        implementation 'pub.devrel:easypermissions:1.0.1'
+
+        //友盟统计
+        implementation 'com.umeng.sdk:common:latest.integration'
+        implementation 'com.umeng.sdk:analytics:latest.integration'
+
+        // photoview
+        implementation 'com.bm.photoview:library:1.4.1'
+        //64K 问题
+        implementation 'com.android.support:multidex:1.0.3'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlin_version"
+    //noinspection GradleCompatible
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+}
